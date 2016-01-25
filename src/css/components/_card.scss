@@ -8,11 +8,9 @@
   @include boxShadow();
 
     @if $size == 'full' {
-      flex: 100% 1;
       width: 100%;
     } @else if $size == 'half' {
-      flex: 45% 1;
-      max-width: 46%;
+      width: $card__half--width;
     }
 
     .preview-element {
@@ -38,6 +36,10 @@
 
     }
 
+}
+
+.gutter-sizer {
+  width: #{ 100% - ($card__half--width * 2) };
 }
 
 .card__full {
