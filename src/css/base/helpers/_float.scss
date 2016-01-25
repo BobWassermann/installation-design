@@ -1,0 +1,16 @@
+/// Float the element's children. Clearfix is applied to the element that includes the mixin
+/// @example 
+///   .float-children-float {
+///     @include float;
+///   }
+/// @author Bob Wassermann
+
+@mixin float {
+    @include clearfix;
+    
+    > * {
+        float: left;
+        margin: 0 1em;
+    }
+
+}

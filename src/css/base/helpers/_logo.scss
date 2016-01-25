@@ -1,0 +1,20 @@
+/// Add the logo in the default size. Uses the variables `$logo--width` and `$logo--height`, defined in `_helpers.scss`
+/// @param  {String} $position can be set to `absolute`, which will align the icon on the y-axis too. Parameter can be left open to just get teh logo without extra styling
+/// @example 
+///   .logo {
+///     @include logo();
+///   }
+/// @author Bob Wassermann
+
+@mixin logo($position:"") {
+    background: left/contain url(../img/logo.svg) no-repeat;
+    width: $logo--width;
+    height: $logo--height;
+
+    @if $position == absolute {
+        position: absolute;
+        left: $global__margin;
+        @include align('none', 'center');
+    }
+
+}

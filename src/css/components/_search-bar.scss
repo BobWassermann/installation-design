@@ -1,0 +1,42 @@
+@mixin searchBar() {
+    @include websiteWidth;
+    @include align('center', 'center');
+    position: absolute;
+
+    input {
+        @include boxShadow;
+        @include borderRadius;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: $font--size__big;
+        padding: 0.7em;
+        outline: none;
+        border: none;
+    }
+
+    .search-bar__attributes {
+        @include alignChildren;
+        @include align('none', 'center');
+        position: absolute;
+        right: $global__margin;
+        top: 52%; // optical fix
+
+        > * {
+            float: left;
+            margin-left: 1em;
+        }
+
+    }
+
+    .search--icon {
+        display: inline-block;
+        width: $search__icon--size;
+        height: $search__icon--size;
+        background: center/contain url(../img/icon__search.svg) no-repeat;
+    }
+
+}
+
+.search-bar {
+    @include searchBar();
+}

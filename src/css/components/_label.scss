@@ -1,0 +1,25 @@
+@mixin label($size) {
+    @include borderRadius();
+    @include uc();
+    background: $label--background;
+    margin: 0 0.5em;
+    color: #ffffff;
+    box-sizing: border-box;
+    display: inline-block;
+
+    @if $size == 'big' {
+        padding: 1em 1.5em;
+        font-size: $font--size__big;
+    } @else if $size == 'small' {
+        padding: 0.5em 1em;
+    }
+
+}
+
+label {
+    @include label('small');
+}
+
+label.label__big {
+    @include label('big');
+}

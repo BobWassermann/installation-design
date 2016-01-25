@@ -1,0 +1,11 @@
+/// Add the website width and max-width to an element. Use it as an extendable wrapper. Values are defined in `_helpers.scss`, `$website--width` and `$website--max-width`
+/// @example 
+///   .wrapper {
+///     @include websiteWidth;
+///   }
+/// @author Bob Wassermann
+
+@mixin websiteWidth {
+    width: $website--width;
+    max-width: $website--max-width;
+}

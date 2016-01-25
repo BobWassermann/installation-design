@@ -1,0 +1,48 @@
+@mixin imageWrap($count) {
+  position: relative;
+
+  img {
+    position: absolute;
+    cursor: pointer;
+    transition: 0.2s;
+    @include boxShadow;
+    @include borderRadius;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    &:hover {
+      z-index: 10;
+    }
+
+    @if $count == 1 {
+      max-width: 100%;
+      height: 500px;
+    } @else if $count == 2 {
+      &:nth-child(1) { 
+        width: 90%;
+        left: 0;
+      }
+      &:nth-child(2) { 
+        width: 60%;
+        right: 0;
+        top: $card__content-width;
+      }
+    }
+
+  }
+
+}
+
+@for $i from 1 through 2 {
+  .image-wrap-#{$i} {
+    @include imageWrap($i);
+  }
+}

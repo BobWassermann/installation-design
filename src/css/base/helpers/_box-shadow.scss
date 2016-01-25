@@ -1,0 +1,10 @@
+/// Adds the default box-shadow
+/// @example 
+///   .bigger-than-you-doesnt-weight-anything {
+///     @include boxShadow;
+///   }
+/// @author Bob Wassermann
+
+@mixin boxShadow {
+    box-shadow: $global__shadow;
+}

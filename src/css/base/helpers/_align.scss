@@ -1,0 +1,56 @@
+/// Align items using the `transform` element
+/// @param  {String} $x Set the horizontal alignment, `left`, `center`, `right` or `none`. `none` returns `inherit`
+/// @param  {String} $y Set the vertical alignment, `top`, `center`, `bottom` or `none`. `none` returns `inherit`
+/// @example 
+///   .xAlign {
+///     @include align('center', 'none');
+///   }
+/// @author Bob Wassermann
+
+@mixin align($x, $y) {
+  $translateX: 0;
+  $translateY: 0;
+  $left: 0;
+  $top: 0;
+
+  @if $x == 'left' {
+    $left: 0;
+    $translateX: 0;
+  } @else if $x == 'center' {
+    $left: 50%;
+    $translateX: -50%;
+  } @else if $x == 'right' {
+    $left: 100%;
+    $translateX: 0;
+  } @else if $x == 'none' {
+    $left: inherit;
+    $translateX: inherit;
+  }
+
+  @if $y == 'top' {
+    $top: 0;
+    $translateY: 0;
+  } @else if $y == 'center' {
+    $top: 50%;
+    $translateY: -50%;
+  } @else if $y == 'bottom' {
+    $top: 100%;
+    $translateY: 0;
+  } @else if $y == 'none' {
+    $top: inherit;
+    $translateY: inherit;
+  }
+
+  @if $x == 'none' {
+    transform: translateY($translateY);
+    top: $top;
+  } @else if $y == 'none' {
+    transform: translateX($translateX);
+    left: $left;
+  } @else {
+    transform: translateX($translateX) translateY($translateY);
+    left: $left;
+    top: $top;
+  }
+
+}

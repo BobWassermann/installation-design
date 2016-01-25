@@ -1,0 +1,10 @@
+/// Adds the default border-radius
+/// @example 
+///   .not-so-edgy {
+///     @include borderRadius;
+///   }
+/// @author Bob Wassermann
+
+@mixin borderRadius {
+    border-radius: $global__borderRadius;
+}

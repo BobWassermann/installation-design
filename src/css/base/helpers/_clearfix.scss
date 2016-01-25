@@ -1,0 +1,14 @@
+/// Clear floats
+/// @example 
+///   .floated-item-parent {
+///     @include clearfix;
+///   }
+/// @author Bob Wassermann
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

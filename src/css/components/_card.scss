@@ -1,0 +1,49 @@
+@mixin card($size) {
+  background-color: #ffffff;
+  margin: #{ $global__margin * 2 } 0;
+  padding: $global__padding;
+  box-sizing: border-box;
+  position: relative;
+  @include borderRadius();
+  @include boxShadow();
+
+    @if $size == 'full' {
+      flex: 100% 1;
+      width: 100%;
+    } @else if $size == 'half' {
+      flex: 45% 1;
+      max-width: 46%;
+    }
+
+    .preview-element {
+      top: -$card__preview--offset;
+      position: relative;
+      display: inline-block;
+    }
+
+    .card-content {
+      width: $card__content-width;
+      display: block;
+      margin: auto;
+    }
+
+    .card-meta {
+      @include alignChildren;
+    }
+
+    .card-meta > * {
+      margin: 0 1em;
+
+      &:last-child { margin-right: 0; }
+
+    }
+
+}
+
+.card__full {
+  @include card('full');
+}
+
+.card__half {
+  @include card('half');
+}
