@@ -21,7 +21,7 @@ $global__padding: $global__margin;
 $global__shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
 
 $font--size__xbig: 40px;
-$font--size__big: 22px;
+$font--size__big: 20px;
 $font--size__medium: 16px;
 $font--size__small: 10px;
 $font--weight: 300;
@@ -35,7 +35,7 @@ $header--background: $gradient__orange;
 $header--width: 100%;
 $header--height: 80px;
 
-$logo--width: 140px;
+$logo--width: 57px;
 $logo--height: 35px;
 
 $search__icon--size: $logo--height;
@@ -54,22 +54,23 @@ $product-image--size__big: 200px;
 $card__preview--offset: 55px;
 $card__content-width: 80%;
 
-@import 'helpers/clearfix';
-@import 'helpers/website-width';
+@import 'helpers/align-children';
 @import 'helpers/align';
-@import 'helpers/float';
-@import 'helpers/logo';
 @import 'helpers/border-radius';
 @import 'helpers/box-shadow';
+@import 'helpers/clearfix';
+@import 'helpers/float';
+@import 'helpers/logo';
+@import 'helpers/mq';
 @import 'helpers/uc';
-@import 'helpers/align-children';
+@import 'helpers/website-width';
 
 /*
     Declarations
 */
 
 .logo {
-    @include logo();
+  @include logo(true, 'absolute');
 }
 
 .xyAlign,
@@ -83,46 +84,46 @@ $card__content-width: 80%;
 }
 
 .xyAlign {
-    @include align('center', 'center');
+  @include align('center', 'center');
 }
 
 .xAlign {
-    @include align('center', 'none');
+  @include align('center', 'none');
 }
 
 .yAlign {
-    @include align('none', 'center')
+  @include align('none', 'center')
 }
 
 .xAlignLeft {
-    @include align('left', 'none');
+  @include align('left', 'none');
 }
 
 .xAlignRight {
-    @include align('right', 'none');
+  @include align('right', 'none');
 }
 
 .yAlignTop {
-    @include align('none', 'top');
+  @include align('none', 'top');
 }
 
 .yAlignBottom {
-    @include align('none', 'bottom');
+  @include align('none', 'bottom');
 }
 
 .alignChildren {
-    @include alignChildren;
+  @include alignChildren;
 }
 
 .float {
-    @include float();
+  @include float();
 }
 
 .space__top {
-    margin-top: $global__margin * 4;
+  margin-top: $global__margin * 4;
 }
 
 hr {
-    margin: #{$global__margin * 6} 0;
-    border: 1px solid lighten($color__grey, 20);
+  margin: #{$global__margin * 6} 0;
+  border: 1px solid lighten($color__grey, 20);
 }

@@ -6,8 +6,8 @@
 ///   }
 /// @author Bob Wassermann
 
-@mixin logo($position:"") {
-    background: left/contain url(../img/logo.svg) no-repeat;
+@mixin logo($text, $position:'') {
+    background: right/contain url(../img/logo.svg) no-repeat;
     width: $logo--width;
     height: $logo--height;
 
@@ -15,6 +15,23 @@
         position: absolute;
         left: $global__margin;
         @include align('none', 'center');
+    }
+
+    @if $text == true {
+      &:after {
+        @include align('none', 'center');
+        font-size: $font--size__big;
+        letter-spacing: 0.2em;
+        content: 'AISLER';
+        position: absolute;
+        left: #{ $logo--width * 1.3 };
+        color: #ffffff;
+
+        @include mq('laptop') {
+          content: '';
+        }
+
+      }
     }
 
 }

@@ -42,9 +42,27 @@ table {
     Declarations
 */
 .logo {
-  background: left/contain url(../img/logo.svg) no-repeat;
-  width: 140px;
-  height: 35px; }
+  background: right/contain url(../img/logo.svg) no-repeat;
+  width: 57px;
+  height: 35px;
+  position: absolute;
+  left: 2%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%; }
+  .logo:after {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    top: 50%;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    content: 'AISLER';
+    position: absolute;
+    left: 74.1px;
+    color: #ffffff; }
+    @media (max-width: 1900px) {
+      .logo:after {
+        content: ''; } }
 
 .xyAlign,
 .xAlign,
@@ -142,7 +160,7 @@ a {
   text-decoration: none; }
 
 .font--size__big {
-  font-size: 22px; }
+  font-size: 20px; }
 
 .font--size__medium {
   font-size: 16px; }
@@ -191,14 +209,9 @@ header,
   z-index: 99; }
   header .logo,
   .header .logo {
-    background: left/contain url(../img/logo.svg) no-repeat;
-    width: 140px;
-    height: 35px;
-    position: absolute;
-    left: 2%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    top: 50%; }
+    background: right/contain url(../img/logo.svg) no-repeat;
+    width: 57px;
+    height: 35px; }
 
 .search-bar {
   width: 80%;
@@ -213,7 +226,7 @@ header,
     border-radius: 4px;
     width: 100%;
     box-sizing: border-box;
-    font-size: 22px;
+    font-size: 20px;
     padding: 0.7em;
     outline: none;
     border: none; }
@@ -363,7 +376,7 @@ label.label__big {
   box-sizing: border-box;
   display: inline-block;
   padding: 1em 1.5em;
-  font-size: 22px; }
+  font-size: 20px; }
 
 .makeability__big {
   background-color: #4DD588;
