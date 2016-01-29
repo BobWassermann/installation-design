@@ -1,31 +1,9 @@
-@import 'base/reset', 
-        'base/helpers';
+$icon-font-path: '../fonts/';
 
-@import 'components/typography',
-        'components/button',
-        'components/header', 
-        'components/search-bar',
-        'components/card',
-        'components/label',
-        'components/makeability',
-        'components/grid',
-        'components/user',
-        'components/product-image',
-        'components/image-wrap';
+@import 'modules/typography';
+@import 'modules/bg-video';
+@import 'modules/slide';
 
 body {
-    background-color: $color__grey--light;
-}
-
-.wrapper {
-    @include websiteWidth();
-    display: block;
-    margin: auto;
-}
-
-.wrapper.content {
-    margin-top: calc(#{$header--height} + #{$global__margin});
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
+    background-color: #000;
 }

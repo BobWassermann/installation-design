@@ -11,9 +11,12 @@
   "devDependencies": {
     "babel": "5.8.23",
     "babelify": "6.4.0",
+    "browser-serialport": "^2.0.3",
     "browser-sync": "2.9.11",
     "browserify": "11.2.0",
     "connect-history-api-fallback": "1.1.0",
+    "express": "^4.13.4",
+    "fs": "0.0.2",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "3.1.0",
     "gulp-notify": "2.2.0",
@@ -21,12 +24,18 @@
     "gulp-sass": "^2.1.1",
     "gulp-uglify": "1.4.2",
     "gulp-util": "3.0.7",
+    "johnny-five": "^0.9.19",
+    "mock-firmata": "0.0.6",
     "sassdoc": "^2.1.19",
+    "serialport": "^2.0.6",
+    "socket.io": "^1.4.5",
     "vinyl-buffer": "1.0.0",
     "vinyl-source-stream": "1.1.0",
     "watchify": "3.4.0"
   },
   "dependencies": {
-    "masonry-layout": "^4.0.0"
+    "jquery": "^2.2.0",
+    "masonry-layout": "^4.0.0",
+    "slick-carousel": "^1.5.9"
   }
 }

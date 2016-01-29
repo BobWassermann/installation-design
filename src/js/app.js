@@ -1,10 +1,11 @@
-// Requires
-var Masonry = require('masonry-layout');
-require('./components/scrollbar.js');
+var $ = require('jquery');
+require('./objects.js');
 
-// Calls
-var msnry = new Masonry('.card-container', {
-  percentPosition: true,
-  columnWidth: '.card__half',
-  gutter: '.gutter-sizer'
+var components = [
+  require('./components/slideshow.js'),
+  require('./components/board.js')
+];
+
+$(document).ready(() => {
+  components.forEach(m => m.init());
 });

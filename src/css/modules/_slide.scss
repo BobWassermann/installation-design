@@ -1,0 +1,43 @@
+$but-size: 400px;
+
+.slide {
+  width: 100%;
+  height: 100vh !important;
+  position: relative;
+  display: block;
+  margin: auto;
+  outline: 0;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 200px;
+    font-weight: 100;
+    font-style: italic;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 2% 0;
+  }
+
+  p, .model {
+    position: absolute;
+    height: 60vh;
+    top: 35vh;
+    width: 40%;
+  }
+
+  p {
+    left: 50%;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5em;
+  }
+
+  .model {
+    left: 5%;
+  }
+
+}

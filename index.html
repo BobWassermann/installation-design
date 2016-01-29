@@ -2,134 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Aisler</title>
+    <title>SHAPE</title>
     <link rel="stylesheet" href="build/css/app.css">
+    <link rel="stylesheet" href="node_modules/slick-carousel/slick/slick.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo"></div>
-        <div class="search-bar">
-            <input type="text">
-            <div class="search-bar__attributes">
-                <button>Back to search results</button>
-                <span class="search--icon"></span>
-            </div>
-        </div>
-    </header>
+  <!-- BG VIDEO -->
+  <div class="bg-video-wrapper">
+    <video autoplay loop src="build/img/bg.mp4" class="bg-video"></video>
+  </div>
 
-    <div class="content wrapper card-container">
-
-        <div class="gutter-sizer"></div>
-        <div class="card card__full">
-            <div class="grid-wrap">
-                <div class="grid grid__20">
-                    <div class="product-image__small" style="background-image: url(https://raw.githubusercontent.com/TomWhitwell/RadioMusic/master/Collateral/BuildImages/rmpic.jpg)"></div>
-                </div>
-                <div class="grid grid__40">
-                    <div class="yAlign">
-                        <h4 class="font--size__big">RadioMusic_F Rev2</h4>
-                        <p class="font--size__big">Virtual Radio module for Eurorack</p>
-                    </div>
-                </div>
-                <div class="grid grid__40">
-                    <div class="card-meta">
-                        <label>Easy</label>
-                        <label>30 Parts</label>
-                        <div class="makeability makeability__small"><span>80</span></div>
-                        <div class="user-profile user-profile__small" style="background-image: url(https://avatars2.githubusercontent.com/u/1890544?v=3&s=400)"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card card__half text__center">
-            <div class="preview-element">
-                <div class="makeability makeability__big"><span>80</span></div>
-            </div>
-            <div class="card-wrapper">
-                <div class="card-content">
-                    <h4>Can I make it?</h4>
-                    <p>Yeah, you can make this. There are things missing, but that shouldn’t hold you back. If you can fix the missing things, why not do a <a href="">pull request</a>?</p>
-                    <hr />
-                    <h4 class="text__red">Missing things</h4>
-                    <ul class="checklist">
-                        <li>Documentation seems incomplete</li>
-                        <li>Only 1 photo attached</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="card card__half text__center">
-            <div class="preview-element">
-                <div class="product-image__big" style="background-image: url(https://raw.githubusercontent.com/TomWhitwell/RadioMusic/master/Collateral/BuildImages/rmpic.jpg)"></div>
-            </div>
-            <div class="card-wrapper">
-              <div class="card-content">
-                <h4>What is it?</h4>
-                <p>It’s awesome and you’ll be probably able to make it. <a href="">TomWhitwell</a> left me the following titbits.</p>
-                <hr />
-                <ul>
-                  <li>Full Documentation</li>
-                  <li>Module manual</li>
-                  <li>Build documents</li>
-                  <li>Setting up the SD Card</li>
-                  <li>Suggested sound library</li>
-                  <li>Hardware: Eagle CAD files</li>
-                  <li>Hardware: Parts List</li>
-                  <li>Firmware: Teensyduino files</li>
-                  <li>Report Issues with hardware or firmware</li>
-                  <li>This is not a radio. It is a sample player that behaves like a radio.</li>
-                  <li>A digital way to simulate radio-powered compositions by John Cage, Karlheinz Stockhausen and Don Buchla's voltage-controlled radio experiments. It uses a teensy3.1 to play files from a SD card to simulate a voltage controlled AM/FM/Shortwave/Time Travel radio.</li>
-                </ul>
-              </div>
-            </div>
-        </div>
-        <div class="card card__half text__center">
-            <div class="preview-element">
-              <label class="label__big">30 Parts</label>
-            </div>
-            <div class="card-wrapper">
-              <div class="card-content">
-                  <h4>What do I need?</h4>
-                  <p>This is where it get’s awkward. I honestly don’t know, <a href="">TomWhitwell</a> didn’t tell me. There are some leftovers, feel free to <a href="">assign</a> them.</p>
-                  <hr />
-                  <h4 class="text__red">Non-assigned parts</h4>
-                  <p>Whoopsie diasy, 14 of 24 parts are not assigned. If you believe in karma, this is your opportunity to gain some.</p>
-                  <button class="button__blue space__top">Assing parts</button>
-              </div>
-            </div>
-        </div>
-        <div class="card card__half text__center">
-            <div class="preview-element">
-                <label class="label__big">Easy</label>
-            </div>
-            <div class="card-wrapper">
-              <div class="card-content">
-                  <h4>How do I build it?</h4>
-                  <p>Glad you asked, it’s actually fairly easy. Beneath is how to do it.</p>
-                  <hr />
-              </div>
-              <div class="image-wrap image-wrap-2">
-                  <img src="https://cdn.aisler.net/system/sheets/drawings/000/000/410/original/data?1452502338" alt="">
-                  <img src="https://cdn.aisler.net/system/boards/drawings/000/000/303/original/data?1452457815" alt="">
-              </div>
-            </div>
-        </div>
-        <div class="card card__half text__center">
-            <div class="preview-element">
-               <div class="user-profile user-profile__big" style="background-image: url(https://avatars2.githubusercontent.com/u/1890544?v=3&s=400)"></div>         
-            </div>
-            <div class="card-wrapper">
-              <div class="card-content">
-                  <h4>What else did (s)he make?</h4>
-                  <p>Quite a lot, <a href="https://github.com/TomWhitwell" target="_blank">TomWhitwell</a> has been busy. I listed the projects below, sorted on makeability.</p>
-              </div>
-            </div>
-        </div>
-
-    </div>
-
+  <!-- Content -->
+  <div id="slideshow"></div>
+  
 <script src="build/js/app.min.js"></script>
 
 </body>
