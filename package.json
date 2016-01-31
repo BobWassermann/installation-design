@@ -1,12 +1,12 @@
 {
-  "name": "aisler",
+  "name": "installation design",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Aisler",
+  "author": "Bob Wassermann",
   "license": "ISC",
   "devDependencies": {
     "babel": "5.8.23",
