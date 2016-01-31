@@ -11,7 +11,7 @@ class Slideshow extends Component {
   getContent() {
     var ObjectMarkup = '';
     Object.keys(Objects).forEach(function(key) {
-      ObjectMarkup += '<div class="slide"><div class="model"></div><h1>' + Objects[key].name + '</h1><p>' + Objects[key].text + '</p></div>';
+      ObjectMarkup += '<div class="slide"><div class="model" style="background-image: url(./src/img/' + Objects[key].name.toLowerCase() + '/' + window.potentiometerData + '.png)"></div><h1>' + Objects[key].name + '</h1><p>' + Objects[key].text + '</p></div>';
     });
     this.$element.append(ObjectMarkup);
     this.initSlick();

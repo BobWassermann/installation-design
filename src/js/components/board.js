@@ -1,23 +1,25 @@
 var Component = require('./component.js');
-var SerialPort = require("browser-serialport").SerialPort
-var serialPort = new SerialPort("/dev/cu.usbmodem1421", {
-  baudrate: 57600
-});
+var socket = io.connect('http://localhost:3000');
 
 class Board extends Component {
   constructor(element, $) {
     super();
 
-    serialPort.on("open", function () {
-      console.log('open');
-      serialPort.on('data', function(data) {
-        console.log('data received: ' + data);
-      });
-      serialPort.write("ls\n", function(err, results) {
-        console.log('err ' + err);
-        console.log('results ' + results);
-      });
+    var potentiometerDataLcl;
+
+    socket.on('potentiometer', function (data) {
+      potentiometerDataLcl = data;
     });
+
+    socket.on('buttonPrev', function (data) {
+      if ( data === true ) $('#slideshow').slick('slickPrev');
+    });
+
+    socket.on('buttonNext', function (data) {
+      if ( data === true ) $('#slideshow').slick('slickNext');
+    });
+
+    window.potentiometerData = potentiometerDataLcl;
 
   }
 
