@@ -34,7 +34,7 @@ board.on("ready", function() {
     console.log('Potentiometer initialized');
     potentiometer.on('data', function() {
       var self = this.value;
-      var potData = Math.round(five.Fn.map(self, 0, 1023, 0, 100));
+      var potData = Math.round(five.Fn.map(self, 0, 1023, 100, 0));
       potentiometerVal = potData;
     });
 
