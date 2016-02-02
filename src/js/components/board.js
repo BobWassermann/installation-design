@@ -5,10 +5,8 @@ class Board extends Component {
   constructor(element, $) {
     super();
 
-    var potentiometerDataLcl;
-
     socket.on('potentiometer', function (data) {
-      potentiometerDataLcl = data;
+      window.potentiometerData = data;
     });
 
     socket.on('buttonPrev', function (data) {
@@ -18,8 +16,6 @@ class Board extends Component {
     socket.on('buttonNext', function (data) {
       if ( data === true ) $('#slideshow').slick('slickNext');
     });
-
-    window.potentiometerData = potentiometerDataLcl;
 
   }
 

@@ -49,6 +49,8 @@ board.on("ready", function() {
     console.log('Right button initialized');
     buttonNext.on('press', function()   { buttonNextVal = true; });
     buttonNext.on('release', function() { buttonNextVal = false; });
+
+
 });
  
 //Socket connection handler
