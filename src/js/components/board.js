@@ -2,12 +2,8 @@ var Component = require('./component.js');
 var socket = io.connect('http://localhost:3000');
 
 class Board extends Component {
-  constructor(element, $) {
+  constructor(element, $, potentiometer) {
     super();
-
-    socket.on('potentiometer', function (data) {
-      window.potentiometerData = data;
-    });
 
     socket.on('buttonPrev', function (data) {
       if ( data === true ) $('#slideshow').slick('slickPrev');
@@ -20,6 +16,8 @@ class Board extends Component {
   }
 
 }
+
+console.log(window.potentiometerData);
 
 Board.selector = 'body';
 module.exports = Board;

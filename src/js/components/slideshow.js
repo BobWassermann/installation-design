@@ -1,11 +1,29 @@
 var Component = require('./component.js');
 var slick = require('slick-carousel');
+var socket = io.connect('http://localhost:3000');
 
 class Slideshow extends Component {
   constructor(element, $) {
     super();
     this.$element = $(element);
     this.getContent();
+
+    setInterval(() => {
+      this.updateReel();
+    }, 100);
+
+    socket.on('buttonPrev', function (data) {
+      if ( data === true ) {
+        this.$element.slick('slickPrev');
+      }
+    });
+
+    socket.on('buttonNext', function (data) {
+      if ( data === true ) {
+        this.$element.slick('slickNext');
+      } 
+    });
+
   }
 
   getContent() {
@@ -23,13 +41,14 @@ class Slideshow extends Component {
   }
 
   updateReel() {
-    setInterval(() => {
-      var oldImage = this.$element.find('.slick-current .model')[0].style.backgroundImage;
-      var newImage = oldImage.replace(/\d+.png/g, window.potentiometerData + '.png');
-      var newImageLink = newImage.replace(/\http:\/\/localhost:\d+\//, './');
-      this.$element.find('.slick-current .model').css('background-image', newImageLink);
-      console.log(newImageLink);
-    }, 50);
+    var oldImage = this.$element.find('.slick-current .model')[0].style.backgroundImage;
+    var newImageLink;
+    var slickCurrentSlide = this.$element.find('.slick-current .model');
+    socket.on('potentiometer', function (data) {
+      var newImage = oldImage.replace(/\d+.png/g, data + '.png');
+      newImageLink = newImage.replace(/\http:\/\/localhost:\d+\//, './');
+      slickCurrentSlide.css('background-image', newImageLink);
+    });
   }
 
   initSlick() {
